@@ -17,7 +17,7 @@ import About from "./About";
 import Contact from "./Contact";
 import backgroundImage from "../assets/main-bg.jpg";
 import backgroundImage2 from "../assets/mohamad-bn-salman.png";
-import backgroundImage3 from "../assets/picture1.png";
+import backgroundImage3 from "../assets/Picture1.png";
 import { User } from "lucide-react";
 
 function Home() {
