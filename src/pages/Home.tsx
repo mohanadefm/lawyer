@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  ChevronLeft,
   Scale,
   Shield,
   Users,
@@ -9,7 +8,6 @@ import {
   GavelIcon,
   HeartHandshake,
   Calculator,
-  BanIcon as BankIcon,
   Coins,
   Briefcase,
   AlertTriangle,
@@ -18,7 +16,9 @@ import {
 import About from "./About";
 import Contact from "./Contact";
 import backgroundImage from "../assets/main-bg.jpg";
-import backgroundImage2 from "../assets/mbs.jpg";
+import backgroundImage2 from "../assets/mohamad-bn-salman.png";
+import backgroundImage3 from "../assets/picture1.png";
+import { User } from "lucide-react";
 
 function Home() {
   const [showQuote, setShowQuote] = useState(false);
@@ -26,7 +26,7 @@ function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowQuote(true);
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -96,17 +96,17 @@ function Home() {
 
   const testimonials = [
     {
-      name: "محمد العتيبي",
+      name: "محمد العلي",
       position: "رجل أعمال",
       content: "خدمة ممتازة وفريق محترف. ساعدوني في حل قضية معقدة بكل كفاءة.",
     },
     {
-      name: "سارة الشمري",
+      name: "سارة سعيد",
       position: "مديرة شركة",
       content: "أفضل مكتب محاماة تعاملت معه. خبرتهم وتفانيهم في العمل لا مثيل له.",
     },
     {
-      name: "عبدالله القحطاني",
+      name: "عبدالله المصري",
       position: "مستثمر",
       content: "استشاراتهم القانونية ساعدتني في تجنب الكثير من المشاكل المحتملة في عملي.",
     },
@@ -137,15 +137,25 @@ function Home() {
 
       {/* Quote Section */}
       <div className={`transition-opacity duration-1000 ${showQuote ? "opacity-100" : "opacity-0"}`}>
-        <section className="h-screen flex items-center bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto flex items-center justify-between text-right h-full">
+        <section className="h-screen flex flex-col bg-white">
+          {/* Background Image (Top Half) */}
+          <div
+            className="h-1/2 w-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${backgroundImage3})` }}
+          ></div>
+
+          {/* Content (Bottom Half) */}
+          <div className="h-1/2 container mx-auto px-4 flex items-center mb-20">
+            <div className="max-w-6xl mx-auto flex items-center justify-between text-right w-full">
               {/* Text Content (Left) */}
-              <div className="w-2/3">
-                <blockquote className="text-3xl font-medium text-gray-900 mb-6 leading-relaxed">
-                  "يجب أن يكون القانون هو السند الوحيد للجميع، لا تمييز ولا تحيز، كل شخص يستحق العدالة"
+              <div className="w-2/3 ">
+                <blockquote className="text-3xl font-medium text-gray-900 mb-1 leading-relaxed">
+                  يجب أن يكون القانون هو السند الوحيد للجميع
                 </blockquote>
-                <cite className="text-2xl font-semibold text-gray-600 block">محمد بن سلمان</cite>
+                <blockquote className="text-3xl font-medium text-gray-900 mb-6 leading-relaxed">
+                  كل شخص يستحق العدالة
+                </blockquote>
+                <cite className="text-2xl font-semibold text-gray-500 block">محمد بن سلمان</cite>
               </div>
 
               {/* Image (Right) */}
@@ -153,7 +163,7 @@ function Home() {
                 <img
                   src={backgroundImage2}
                   alt="صاحب السمو الملكي الأمير محمد بن سلمان"
-                  className="w-80 h-auto rounded-lg "
+                  className="w-80 h-auto rounded-lg"
                 />
               </div>
             </div>
@@ -183,20 +193,28 @@ function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">قالوا عنا</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-md">
-                <p className="text-gray-600 mb-4">"{testimonial.content}"</p>
-                <div className="font-semibold">{testimonial.name}</div>
-                <div className="text-yellow-600">{testimonial.position}</div>
-              </div>
-            ))}
-          </div>
+
+<section id="testimonials" className="py-20 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-12">قالوا عنا</h2>
+    <div className="grid md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+          {/* User Icon */}
+          <User className="w-12 h-12 text-gray-400 mb-4" />
+          
+          {/* Testimonial Text */}
+          <p className="text-gray-600 mb-4">"{testimonial.content}"</p>
+          
+          {/* Name & Position */}
+          <div className="font-semibold">{testimonial.name}</div>
+          <div className="text-yellow-600">{testimonial.position}</div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Contact Section */}
       <section id="contact">
@@ -213,7 +231,7 @@ function Home() {
             className="bg-yellow-600 text-white px-8 py-3 rounded inline-flex items-center hover:bg-yellow-700 transition-colors"
           >
             اتصل بنا الآن
-           </button>
+          </button>
         </div>
       </section>
     </>

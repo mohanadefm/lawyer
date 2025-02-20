@@ -169,7 +169,7 @@ function Contact() {
                 <Mail className="h-6 w-6 text-yellow-600 mt-1" />
                 <div>
                   <h3 className="font-semibold mb-1">راسلنا</h3>
-                  <p className="text-gray-600">contact@lawfirm.com</p>
+                  <p className="text-gray-600">contact@email.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4 space-x-reverse">

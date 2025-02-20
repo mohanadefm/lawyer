@@ -81,7 +81,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="self-start bg-gray-900 p-4 rounded-lg shadow-md h-40">
-              <h3 className="text-xl font-bold text-white mb-4">المكتب القانوني</h3>
+              <h3 className="text-xl font-bold text-white mb-4">مكتب المحامي نوار الدوسري</h3>
               <p className="text-sm">نقدم خدمات قانونية استثنائية منذ عام ٢٠٢٢</p>
             </div>
             <div className="self-start bg-gray-900 p-4 rounded-lg shadow-md h-40">
@@ -93,7 +93,7 @@ function Layout({ children }: { children: React.ReactNode }) {
                 </li>
                 <li className="flex items-center">
                   <Mail className="h-4 w-4 ml-2" />
-                  contact@lawfirm.com
+                  contact@email.com
                 </li>
                 <li className="flex items-center">
                   <MapPin className="h-4 w-4 ml-2" />
@@ -111,7 +111,7 @@ function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-            <p>جميع الحقوق محفوظة © ٢٠٢٥ المكتب القانوني</p>
+            <p>جميع الحقوق محفوظة © ٢٠٢٥</p>
           </div>
         </div>
       </footer>
